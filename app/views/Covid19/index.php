@@ -12,14 +12,37 @@
 
 </head>
 <body>
-    <?php $this->view('/Shared/topnavbar'); ?>
     <style type='text/css'>
-                .tg  {border-collapse:collapse;border-spacing:0;width:100%;}
-                .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-                overflow:hidden;padding:10px 5px;word-break:normal;}
-                .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-                font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-                .tg .tg-0lax{text-align:left;vertical-align:top}
+                .tg  {
+                  border-collapse:collapse;
+                  border-spacing:0;
+                  width:100%;
+      }
+                .tg td{
+                  border-color:black;
+                  border-style:solid;
+                  border-width:1px;
+                  font-family:Arial, sans-serif;
+                  font-size:14px;
+                  overflow:hidden;
+                  padding:10px 5px;
+                  word-break:normal;
+      }
+                .tg th{
+                  border-color:black;
+                  border-style:solid;
+                  border-width:1px;
+                  font-family:Arial, sans-serif;
+                  font-size:14px;
+                  font-weight:normal;
+                  overflow:hidden;
+                  padding:10px 5px;
+                  word-break:normal;
+      }
+                .tg .tg-0lax{
+                  text-align:left;
+                  vertical-align:top
+      }
 
                 
                 tr > th
@@ -132,25 +155,23 @@
         usort($records,build_sorter("Country_text"));
         
             echo "
-                
-                <div class='grid' style='display: grid;  grid-template-columns: 50% 50%;'>
-                
-                <div class='column' style='; overflow-y: auto; max-height: 650px'>
-                <input class='form-control' id='myInput' type='text' placeholder='Search..'>
-                <table class='tg' >
-                <thead>
-                <tr>
-                    <th class='tg-0lax'>Country</th>
-                    <th class='tg-0lax'>Active Cases</th>
-                    <th class='tg-0lax'>Last Update</th>
-                    <th class='tg-0lax'>New Cases</th>
-                    <th class='tg-0lax'>New Deaths</th>
-                    <th class='tg-0lax'>Total Cases</th>
-                    <th class='tg-0lax'>Total Deaths</th>
-                    <th class='tg-0lax'>Total Recovered</th>
-                </tr>
-                </thead>
-                <tbody id='myTable'>";
+                <div class='grid' style='display: grid;  grid-template-columns: 50% 50%;'>         
+                  <div class='column' style='; overflow-y: auto; max-height: 650px'>
+                  <input class='form-control' id='myInput' type='text' placeholder='Search..'>
+                  <table class='tg' >
+                  <thead>
+                  <tr>
+                      <th class='tg-0lax'>Country</th>
+                      <th class='tg-0lax'>Active Cases</th>
+                      <th class='tg-0lax'>Last Update</th>
+                      <th class='tg-0lax'>New Cases</th>
+                      <th class='tg-0lax'>New Deaths</th>
+                      <th class='tg-0lax'>Total Cases</th>
+                      <th class='tg-0lax'>Total Deaths</th>
+                      <th class='tg-0lax'>Total Recovered</th>
+                  </tr>
+                  </thead>
+                  <tbody id='myTable'>";
 
                 foreach( $records as $record){
                     if(isset($record["Country_text"])){
@@ -171,9 +192,6 @@
                 </table></div>" ;
     ?>
 
-
-  
-  
   <div class='column' id="cesiumContainer" style="width: 100%; max-height:700px; position: relative">
   <div style="position: absolute; width:100%; height: 100%" id="loader">
     <div class='ring'>
