@@ -2,14 +2,14 @@
 
 class App
 {
-	protected $controller = 'HomeController';
+	protected $controller = 'Covid19Controller';
 	protected $method = 'Index';
 	protected $params = [];
 	
 	public function __construct() {
 		$url = $this->parseURL();
 		if (!isset($url[0])) {
-			header('location:/Home/index');
+			header('location:/Covid19/index');
 			return;
 		}
 		
@@ -18,7 +18,7 @@ class App
 		if (file_exists('app/controllers/' . $url[0] . 'Controller.php')) {
 			$this->controller = $url[0] . 'Controller';
 		}else{
-			header('location:/Home/index');
+			header('location:/Covid19/index');
 			return;
 		}
 
@@ -34,7 +34,7 @@ class App
 				$this->method = $url[1];
 			}else{
 		
-					header('location:/Home/index');
+					header('location:/Covid19/index');
 					return;
 				
 			}
